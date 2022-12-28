@@ -98,7 +98,11 @@ open class TimelineTableViewCell: UITableViewCell {
             view.removeFromSuperview()
         }
         
-        let views = viewsInStackView.count <= maxNumSubviews ? viewsInStackView : Array(viewsInStackView[0..<maxNumSubviews])
+//        let views = viewsInStackView.count <= maxNumSubviews ? viewsInStackView : Array(viewsInStackView[0..<maxNumSubviews])
+        var views = viewsInStackView
+        if (maxNumSubviews >= 0 && viewsInStackView.count > maxNumSubviews) {
+           views = Array(viewsInStackView[0..<maxNumSubviews])
+        }
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             view.addConstraint(NSLayoutConstraint(item: view,
