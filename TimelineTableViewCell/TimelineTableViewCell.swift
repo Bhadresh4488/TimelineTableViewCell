@@ -75,7 +75,7 @@ open class TimelineTableViewCell: UITableViewCell {
         titleLabelLeftMargin.constant = timeline.leftMargin + textMargin
         titleLabel.sizeToFit()
 
-        lineInfoLabelRightMargin.constant = timeline.leftMargin - textMargin
+        lineInfoLabelRightMargin.constant = max(timeline.leftMargin - textMargin, 68)timeline.leftMargin - textMargin
         lineInfoLabel.sizeToFit()
 
         descriptionLabel.sizeToFit()
